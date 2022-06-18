@@ -1,6 +1,6 @@
 [init]
 	defaultBranch = main
-  templateDir = /Users/jluckyiv/.config/git/template
+  ; templateDir = /Users/jluckyiv/.config/git/template
 [alias]
 	aa = add --all
 	br = branch
