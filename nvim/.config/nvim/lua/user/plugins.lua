@@ -64,7 +64,7 @@ return packer.startup(function(use)
   -- Commenting
   use {
     "numToStr/Comment.nvim", config = function()
-      require('Comment').setup()
+      require("Comment").setup()
     end
   }
 
@@ -99,7 +99,7 @@ return packer.startup(function(use)
   -- Colorschemes
   use "gruvbox-community/gruvbox"
   use "luisiacc/gruvbox-baby"
-  use 'Mofiqul/dracula.nvim'
+  use "Mofiqul/dracula.nvim"
 
 
   -- Git and GitHub
@@ -117,13 +117,20 @@ return packer.startup(function(use)
   -- File browsing
   use "tpope/vim-projectionist" -- quickly find related files
   use {
-    'kyazdani42/nvim-tree.lua',
+    "kyazdani42/nvim-tree.lua",
     requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+      "kyazdani42/nvim-web-devicons", -- optional, for file icon
     },
-    -- tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    -- tag = "nightly" -- optional, updated every week. (see issue #1193)
   }
 
+  -- Status line
+  use {
+    "nvim-lualine/lualine.nvim",
+    requires = {
+      "kyazdani42/nvim-web-devicons", -- optional, for file icon
+    },
+  }
   -- Telescope
   use "nvim-lua/plenary.nvim" -- helper functions (Telescope dependency)
   use "nvim-lua/popup.nvim" -- popup window manager (Telescope dependency)
