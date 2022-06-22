@@ -83,6 +83,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path" -- path completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   -- use "hrsh7th/cmp-cmdline" -- command-line completions
+  use "hrsh7th/cmp-copilot" -- copilot completions
 
   use "windwp/nvim-autopairs" -- auto-pairs, integrates with cmp and treesitter
   use "tamago324/cmp-zsh" -- command-line completions
