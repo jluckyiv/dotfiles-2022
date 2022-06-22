@@ -130,6 +130,11 @@ _G.packer_plugins = {
     path = "/Users/jluckyiv/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["dash.nvim"] = {
+    loaded = true,
+    path = "/Users/jluckyiv/.local/share/nvim/site/pack/packer/start/dash.nvim",
+    url = "https://github.com/mrjones2014/dash.nvim"
+  },
   ["dracula.nvim"] = {
     loaded = true,
     path = "/Users/jluckyiv/.local/share/nvim/site/pack/packer/start/dracula.nvim",

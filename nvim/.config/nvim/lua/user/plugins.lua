@@ -137,6 +137,10 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- popup window manager (Telescope dependency)
   use "nvim-telescope/telescope.nvim" -- telescope fuzzy finder
   use "nvim-telescope/telescope-fzy-native.nvim" -- use native fzy for telescope
+  use({
+    'mrjones2014/dash.nvim',
+    run = 'make install',
+  })
 
   -- Tmux integration
   -- use { "alexghergh/nvim-tmux-navigation" }
