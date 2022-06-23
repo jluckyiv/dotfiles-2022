@@ -94,7 +94,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # generate and source plugins from ~/.zsh_plugins.txt
 antidote load
 
-plugins=(git asdf)
+plugins=(git asdf zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
