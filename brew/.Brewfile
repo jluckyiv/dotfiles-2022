@@ -12,6 +12,7 @@ tap "homebrew/services"
 # tap "mongodb/brew"
  
 # brew "alexjs"
+brew "ansible"
 brew "bat"
 brew "black"
 # brew "ca-certificates"
@@ -90,6 +91,7 @@ brew "stow"
 brew "stylua"
 brew "svn"
 # brew "terminator"
+brew "tldr"
 brew "tmux"
 brew "tree"
 # brew "tree-sitter"
@@ -101,16 +103,18 @@ brew "z"
 
 # cask "alacritty"
 # cask "brave-browser"
-# cask "devonthink"
 # cask "gloomhaven-helper"
 # cask "iterm2"
 # cask "mactex"
 # cask "safari-technology-preview"
 cask "1password"
 cask "alfred"
+cask "airbuddy"
 cask "basictex"
-cask "cheatsheet"
+cask "brave-browser"
 cask "cardhop"
+cask "cheatsheet"
+cask "devonthink"
 cask "docker"
 cask "dropbox"
 cask "fantastical"
@@ -134,3 +138,7 @@ cask "font-ibm-plex-mono"
 mas "1Password for Safari", id: 1569813296
 mas "Magnet", id: 441258766 
 mas "Microsoft OneDrive", id: 823766827
+mas "Microsoft Word", id: 462054704
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft PowerPoint", id: 462062816
+# mas "Microsoft OneNote", id: 784801555
