@@ -69,3 +69,4 @@ n
 
 *.local
 .npmrc
+gh/.config/gh/hosts.yml

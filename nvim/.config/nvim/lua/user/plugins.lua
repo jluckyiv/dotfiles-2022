@@ -83,6 +83,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path" -- path completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   -- use "hrsh7th/cmp-cmdline" -- command-line completions
+  use "hrsh7th/cmp-copilot" -- copilot completions
 
   use "windwp/nvim-autopairs" -- auto-pairs, integrates with cmp and treesitter
   use "tamago324/cmp-zsh" -- command-line completions
@@ -136,6 +137,10 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- popup window manager (Telescope dependency)
   use "nvim-telescope/telescope.nvim" -- telescope fuzzy finder
   use "nvim-telescope/telescope-fzy-native.nvim" -- use native fzy for telescope
+  use({
+    'mrjones2014/dash.nvim',
+    run = 'make install',
+  })
 
   -- Tmux integration
   -- use { "alexghergh/nvim-tmux-navigation" }

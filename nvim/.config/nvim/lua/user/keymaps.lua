@@ -50,7 +50,7 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Config keymaps --
-vim.keymap.set("n", ",f", ":Telescope find_files cwd=~/.config/nvim<CR>", opts)
+vim.keymap.set("n", ",f", ":Telescope find_files hidden=true cwd=~/.config/nvim<CR>", opts)
 vim.keymap.set("n", ",g", ":Telescope grep_string cwd=~/.config/nvim<CR>", opts)
 vim.keymap.set("n", ",o", ":vs ~/.config/nvim/lua/user/options.lua<CR>", opts)
 vim.keymap.set("n", ",k", ":vs ~/.config/nvim/lua/user/keymaps.lua<CR>", opts)
@@ -60,7 +60,8 @@ vim.keymap.set("n", ",c", ":vs ~/.config/nvim/lua/user/cmp.lua<CR>", opts)
 vim.keymap.set("n", ",,", ":vs ~/.config/nvim/init.lua<CR>", opts)
 vim.keymap.set("n", ",s", ":luafile %<CR>", opts)
 
-vim.keymap.set("n", "<leader>f", ":Telescope find_files<CR>", opts)
+vim.keymap.set("n", "<leader>d", ":Telescope find_files hidden=true<CR>", opts)
+vim.keymap.set("n", "<leader>f", ":Telescope find_files hidden=false<CR>", opts)
 vim.keymap.set("n", "<leader>g", ":Telescope grep_string<CR>", opts)
 
 vim.keymap.set("n", "<leader>c", ":Bdelete!<CR>", opts)

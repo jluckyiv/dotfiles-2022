@@ -50,7 +50,7 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
-cmp.event:on( 'confirm_done', autopairs.on_confirm_done({  map_char = { tex = '' } }))
+cmp.event:on('confirm_done', autopairs.on_confirm_done({ map_char = { tex = '' } }))
 
 cmp.setup {
   snippet = {
@@ -72,26 +72,26 @@ cmp.setup {
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm { select = false },
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      local copilot_keys = vim.fn["copilot#Accept"]("")
-
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif copilot_keys ~= "" then
-        vim.api.nvim_feedkeys(copilot_keys, "i", false)
-      elseif luasnip.expandable() then
-        luasnip.expand()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      elseif check_backspace() then
-        fallback()
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
+    -- ["<Tab>"] = cmp.mapping(function(fallback)
+    --   local copilot_keys = vim.fn["copilot#Accept"]("")
+    --
+    --   if cmp.visible() then
+    --     cmp.select_next_item()
+    --   elseif copilot_keys ~= "" then
+    --     vim.api.nvim_feedkeys(copilot_keys, "i", false)
+    --   elseif luasnip.expandable() then
+    --     luasnip.expand()
+    --   elseif luasnip.expand_or_jumpable() then
+    --     luasnip.expand_or_jump()
+    --   elseif check_backspace() then
+    --     fallback()
+    --   else
+    --     fallback()
+    --   end
+    -- end, {
+    --   "i",
+    --   "s",
+    -- }),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -121,10 +121,11 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "nvim_lsp" },
     { name = "nvim_lua" },
-    { name = "luasnip" },
+    { name = "copilot" },
+    { name = "nvim_lsp" },
     { name = "nvim_lsp_document_symbol" },
+    { name = "luasnip" },
     { name = "git" },
     { name = "zsh" },
 

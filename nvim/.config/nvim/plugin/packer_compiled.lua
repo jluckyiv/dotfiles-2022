@@ -85,6 +85,11 @@ _G.packer_plugins = {
     path = "/Users/jluckyiv/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
+  ["cmp-copilot"] = {
+    loaded = true,
+    path = "/Users/jluckyiv/.local/share/nvim/site/pack/packer/start/cmp-copilot",
+    url = "https://github.com/hrsh7th/cmp-copilot"
+  },
   ["cmp-git"] = {
     loaded = true,
     path = "/Users/jluckyiv/.local/share/nvim/site/pack/packer/start/cmp-git",
@@ -124,6 +129,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jluckyiv/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
+  },
+  ["dash.nvim"] = {
+    loaded = true,
+    path = "/Users/jluckyiv/.local/share/nvim/site/pack/packer/start/dash.nvim",
+    url = "https://github.com/mrjones2014/dash.nvim"
   },
   ["dracula.nvim"] = {
     loaded = true,
