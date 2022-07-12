@@ -4,5 +4,10 @@ require('telescope').setup {
       "node_modules",
       "target"
     }
+  },
+  extensions = {
+    dash = {
+      dash_app_path = "/Applications/Setapp/Dash.app"
+    }
   }
 }

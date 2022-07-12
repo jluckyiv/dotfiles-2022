@@ -141,6 +141,7 @@ return packer.startup(function(use)
     'mrjones2014/dash.nvim',
     run = 'make install',
   })
+  require("dash").setup({ dash_app_path = "/Applications/Setapp/Dash.app" })
 
   -- Tmux integration
   -- use { "alexghergh/nvim-tmux-navigation" }
