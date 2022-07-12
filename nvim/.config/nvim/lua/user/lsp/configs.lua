@@ -5,7 +5,7 @@ end
 
 local lspconfig = require("lspconfig")
 
-local default_servers = { "jsonls", "sumneko_lua" }
+local default_servers = { --[[ "jsonls",  ]] "sumneko_lua" }
 
 lsp_installer.setup {
   ensure_installed = default_servers

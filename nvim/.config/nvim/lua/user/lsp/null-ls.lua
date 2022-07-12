@@ -18,7 +18,7 @@ local sources = {
   diagnostics.eslint,
   formatting.black.with({ extra_args = { "--fast" } }), -- python
   formatting.elm_format, -- elm
-  formatting.gofumpt, -- go (stricter than gofmt)
+  -- formatting.gofumpt, -- go (stricter than gofmt)
   formatting.prettierd, -- js, ts, json, css, scss, less, html, vue, yaml, md, graphql, handlebars
 }
 
