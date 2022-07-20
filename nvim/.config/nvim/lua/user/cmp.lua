@@ -3,7 +3,7 @@ if not cmp_status_ok then
   return
 end
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
+local snip_status_ok, ls = pcall(require, "luasnip")
 if not snip_status_ok then
   return
 end
@@ -13,7 +13,10 @@ if not cmp_autopairs_ok then
   return
 end
 
-require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load()
+-- require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/snippets/" })
+require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
+
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -55,24 +58,46 @@ cmp.event:on('confirm_done', autopairs.on_confirm_done({ map_char = { tex = '' }
 cmp.setup {
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body) -- For `luasnip` users.
+      ls.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
   mapping = cmp.mapping.preset.insert {
-    ["<C-p>"] = cmp.mapping.select_prev_item(),
-    ["<C-n>"] = cmp.mapping.select_next_item(),
-    ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-    ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-    -- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ["<C-e>"] = cmp.mapping {
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    },
     -- Accept currently selected item. If none selected, `select` first item.
+    -- ["<C-y]"] = cmp.mapping.confirm({ select = true }),
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm { select = false },
-    -- ["<Tab>"] = cmp.mapping(function(fallback)
+    ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+    ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+    ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-d>"] = cmp.mapping.scroll_docs(1),
+    ["<c-y>"] = cmp.mapping(
+      cmp.mapping.confirm {
+        behavior = cmp.ConfirmBehavior.Insert,
+        select = true,
+      },
+      { "i", "c" }
+    ),
+
+    ["<c-space>"] = cmp.mapping {
+      i = cmp.mapping.complete(),
+      c = function(
+        _ --[[fallback]]
+      )
+        if cmp.visible() then
+          if not cmp.confirm { select = true } then
+            return
+          end
+        else
+          cmp.complete()
+        end
+      end,
+    },
+
+    -- ["<C-Space>"] = cmp.mapping.complete(),
+    -- ["<C-e>"] = cmp.mapping {
+    --   i = cmp.mapping.abort(),
+    --   c = cmp.mapping.close(),
+    -- },
     --   local copilot_keys = vim.fn["copilot#Accept"]("")
     --
     --   if cmp.visible() then
@@ -88,22 +113,34 @@ cmp.setup {
     --   else
     --     fallback()
     --   end
+    -- if ls.expand_or_jumpable() then
+    --   ls.expand()
+    -- elseif check_backspace() then
+    --   fallback()
+    -- else
+    --   fallback()
+    -- end
     -- end, {
     --   "i",
     --   "s",
     -- }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
+    -- ["<S-Tab>"] = cmp.mapping(function(fallback)
+    -- if cmp.visible() then
+    -- cmp.select_prev_item()
+    -- elseif luasnip.jumpable(-1) then
+    --   luasnip.jump(-1)
+    -- else
+    --   fallback()
+    -- end
+    --   if ls.jumpable(-1) then
+    --     ls.jump(-1)
+    --   else
+    --     fallback()
+    --   end
+    -- end, {
+    --   "i",
+    --   "s",
+    -- }),
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
@@ -135,8 +172,10 @@ cmp.setup {
 
   },
   confirm_opts = {
-    behavior = cmp.ConfirmBehavior.Replace,
-    select = false,
+    -- behavior = cmp.ConfirmBehavior.Replace,
+    behavior = cmp.ConfirmBehavior.Insert,
+    -- select = false,
+    select = true,
   },
   window = {
     documentation = {

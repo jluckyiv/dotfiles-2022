@@ -137,17 +137,21 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- popup window manager (Telescope dependency)
   use "nvim-telescope/telescope.nvim" -- telescope fuzzy finder
   use "nvim-telescope/telescope-fzy-native.nvim" -- use native fzy for telescope
-  use({
-    'mrjones2014/dash.nvim',
-    run = 'make install',
-  })
-  require("dash").setup({ dash_app_path = "/Applications/Setapp/Dash.app" })
 
   -- Tmux integration
   -- use { "alexghergh/nvim-tmux-navigation" }
   -- use "christoomey/vim-tmux-navigator" -- tmux integration
   -- vim.cmd(" let g:tmux_navigator_no_mappings = 0 ")
   use "sunaku/tmux-navigate"
+
+  -- Pandoc
+  use "vim-pandoc/vim-pandoc"
+  use "vim-pandoc/vim-pandoc-syntax"
+
+  -- Tabular
+  use "godlygeek/tabular"
+  -- use "RREthy/nvim-align"
+  use "junegunn/vim-easy-align"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
