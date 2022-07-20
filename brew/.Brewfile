@@ -93,6 +93,7 @@ brew "svn"
 # brew "terminator"
 brew "tldr"
 brew "tmux"
+brew "tmuxinator"
 brew "tree"
 # brew "tree-sitter"
 # brew "unbound"
@@ -118,10 +119,12 @@ cask "devonthink"
 cask "docker"
 cask "dropbox"
 cask "fantastical"
-cask "fig"
+# cask "fig"
 cask "firefox"
 cask "github"
+cask "grammarly"
 cask "karabiner-elements"
+cask "keyboardcleantool"
 cask "kitty"
 cask "nordvpn"
 cask "obsidian"
@@ -135,10 +138,12 @@ cask "font-fira-mono-for-powerline"
 cask "font-source-code-pro-for-powerline"
 cask "font-ibm-plex-mono"
 
-mas "1Password for Safari", id: 1569813296
-mas "Magnet", id: 441258766 
-mas "Microsoft OneDrive", id: 823766827
-mas "Microsoft Word", id: 462054704
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft PowerPoint", id: 462062816
 # mas "Microsoft OneNote", id: 784801555
+mas "1Password for Safari", id: 1569813296
+mas "Amphetamine", id: 937984704
+mas "Magnet", id: 441258766 
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft OneDrive", id: 823766827
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Word", id: 462054704
+mas "PDF Expert", id: 1055273043
