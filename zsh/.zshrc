@@ -141,5 +141,8 @@ export PNPM_HOME="/Users/jluckyiv/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
+# Fig doctor error
+export PATH="$PATH:~/.local/bin"
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"

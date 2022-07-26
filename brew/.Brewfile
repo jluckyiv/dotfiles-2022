@@ -102,10 +102,10 @@ brew "wget"
 brew "youtube-dl"
 brew "z"
 
-# cask "alacritty"
+cask "alacritty"
 # cask "brave-browser"
 # cask "gloomhaven-helper"
-# cask "iterm2"
+cask "iterm2"
 # cask "mactex"
 # cask "safari-technology-preview"
 cask "1password"
@@ -139,6 +139,7 @@ cask "font-source-code-pro-for-powerline"
 cask "font-ibm-plex-mono"
 
 # mas "Microsoft OneNote", id: 784801555
+# mas "PDF Expert", id: 1055273043
 mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
 mas "Magnet", id: 441258766 
@@ -146,4 +147,4 @@ mas "Microsoft Excel", id: 462058435
 mas "Microsoft OneDrive", id: 823766827
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
-mas "PDF Expert", id: 1055273043
+mas "Reeder 5", id: 1529448980

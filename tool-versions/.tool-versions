@@ -6,3 +6,4 @@ neovim 0.6.1
 golang 1.18.3
 rust stable
 rust-analyzer 2022-06-13
+deno 1.24.0
